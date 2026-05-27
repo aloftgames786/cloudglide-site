@@ -5,39 +5,176 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CloudGlide — Aloft Games</title>
 <style>
-  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(180deg, #87ceeb 0%, #b0e0e6 100%); color: #1a2a3a; min-height: 100vh; }
-  main { max-width: 720px; margin: 0 auto; padding: 80px 24px; text-align: center; }
-  h1 { font-size: 56px; margin: 0 0 16px; letter-spacing: -1px; }
-  .tagline { font-size: 20px; opacity: 0.85; margin: 0 0 48px; }
-  .status { display: inline-block; padding: 8px 16px; background: rgba(255,255,255,0.5); border-radius: 20px; font-size: 14px; margin-bottom: 48px; }
-  .section { background: rgba(255,255,255,0.6); padding: 24px; border-radius: 12px; margin-bottom: 24px; text-align: left; }
-  .section h2 { margin: 0 0 12px; font-size: 20px; }
-  a { color: #1a4a7a; }
-  footer { text-align: center; padding: 24px; font-size: 13px; opacity: 0.7; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 60px;
+    background: linear-gradient(180deg,
+      rgba(135,206,250,0.18) 0%,
+      rgba(100,180,255,0.08) 60%,
+      transparent 100%);
+  }
+
+  .plane-emoji { font-size: 72px; display: block; margin-bottom: 16px; animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-14px) rotate(5deg); } }
+
+  h1 {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    background: linear-gradient(90deg, #7ee8fa, #80ff72, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .tagline {
+    font-size: 20px;
+    opacity: 0.85;
+    margin-bottom: 36px;
+    line-height: 1.5;
+  }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #00c853, #1de9b6);
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0,200,83,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .download-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,200,83,0.55); }
+  .download-btn .play-icon { font-size: 24px; }
+
+  .badge {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 6px 18px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-size: 13px;
+    color: #b0d4ff;
+  }
+
+  /* ── Features ── */
+  .features {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .feature-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: transform 0.2s;
+  }
+  .feature-card:hover { transform: translateY(-4px); }
+  .feature-card .icon { font-size: 40px; margin-bottom: 12px; display: block; }
+  .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #7ee8fa; }
+  .feature-card p { font-size: 14px; opacity: 0.75; line-height: 1.5; }
+
+  /* ── About ── */
+  .about {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    text-align: center;
+  }
+  .about h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; color: #ffd700; }
+  .about p { font-size: 16px; opacity: 0.8; line-height: 1.7; margin-bottom: 12px; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 14px;
+    opacity: 0.6;
+  }
+  footer a { color: #7ee8fa; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── Divider ── */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #7ee8fa, #ffd700);
+    border-radius: 2px;
+    margin: 0 auto 40px;
+  }
 </style>
 </head>
 <body>
-<main>
+
+<div class="hero">
+  <span class="plane-emoji">✈️</span>
   <h1>CloudGlide</h1>
-  <p class="tagline">A paper plane endless runner. Tilt to glide through the city sky.</p>
-  <div class="status">Coming soon to Google Play</div>
+  <p class="tagline">A paper plane endless runner.<br>Tilt to glide through the city sky.</p>
+  <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.aloftgames.cloudglidegame" target="_blank">
+    <span class="play-icon">▶</span> Download on Google Play
+  </a>
+  <br>
+  <span class="badge">Free to Play · Android</span>
+</div>
 
-  <div class="section">
-    <h2>About the game</h2>
-    <p>Tilt your phone to steer a paper plane through a stylised city. Dodge bridges and traffic, collect coins and gems, chain near-misses for bonus points. Power-ups include shield, boost, magnet, and slow-motion.</p>
+<div class="features">
+  <div class="feature-card">
+    <span class="icon">🏙️</span>
+    <h3>City Flying</h3>
+    <p>Soar through a stylised city skyline, dodging bridges, buildings and traffic.</p>
   </div>
+  <div class="feature-card">
+    <span class="icon">💎</span>
+    <h3>Collect & Upgrade</h3>
+    <p>Grab coins and gems to unlock new planes and customise your ride.</p>
+  </div>
+  <div class="feature-card">
+    <span class="icon">⚡</span>
+    <h3>Power-Ups</h3>
+    <p>Shield, Boost, Magnet, and Slow-Mo — use them wisely to beat your record.</p>
+  </div>
+  <div class="feature-card">
+    <span class="icon">🏆</span>
+    <h3>Leaderboards</h3>
+    <p>Compete globally via Google Play Games. Climb the Top Gliders leaderboard.</p>
+  </div>
+</div>
 
-  <div class="section">
-    <h2>Studio</h2>
-    <p><strong>Aloft Games</strong> — indie developer based in India. CloudGlide is our first title.</p>
-  </div>
+<div class="about">
+  <div class="divider"></div>
+  <h2>About the Studio</h2>
+  <p><strong>Aloft Games</strong> is an indie game studio based in India. CloudGlide is our debut title — a love letter to endless runners and the joy of paper planes.</p>
+  <p>Email: <a href="mailto:aloftgames786@gmail.com" style="color:#7ee8fa;">aloftgames786@gmail.com</a></p>
+</div>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:aloftgames786@gmail.com">aloftgames786@gmail.com</a></p>
-    <p><a href="privacy.html">Privacy Policy</a></p>
-  </div>
-</main>
-<footer>&copy; 2026 Aloft Games</footer>
+<footer>
+  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  &copy; 2026 Aloft Games
+</footer>
+
 </body>
 </html>
