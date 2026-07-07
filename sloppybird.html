@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SloppyBird — Aloft Games</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: linear-gradient(135deg, #1a2980, #26d0ce); color: #fff; min-height: 100vh; }
+  .nav { padding: 20px 24px; }
+  .nav a { color: #cffafe; text-decoration: none; font-size: 14px; }
+  .nav a:hover { text-decoration: underline; }
+  .hero { text-align: center; padding: 40px 24px 60px; background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 60%, transparent 100%); }
+  .bird-emoji { font-size: 72px; display: block; margin-bottom: 16px; animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-16px) rotate(8deg); } }
+  h1 { font-size: 64px; font-weight: 900; letter-spacing: -2px; background: linear-gradient(90deg, #fff59d, #ffd54f, #ffab40); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+  .tagline { font-size: 20px; opacity: 0.9; margin-bottom: 36px; line-height: 1.5; }
+  .download-btn { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #ffd54f, #ffab40); color: #3a2600; font-weight: 700; font-size: 18px; padding: 16px 36px; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 32px rgba(255,171,64,0.4); transition: transform 0.2s, box-shadow 0.2s; }
+  .download-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255,171,64,0.55); }
+  .download-btn .play-icon { font-size: 24px; }
+  .badge { display: inline-block; margin-top: 20px; padding: 6px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; font-size: 13px; color: #fff; }
+  .features { max-width: 900px; margin: 0 auto; padding: 60px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+  .feature-card { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 28px 20px; text-align: center; backdrop-filter: blur(8px); transition: transform 0.2s; }
+  .feature-card:hover { transform: translateY(-4px); }
+  .feature-card .icon { font-size: 40px; margin-bottom: 12px; display: block; }
+  .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #fff59d; }
+  .feature-card p { font-size: 14px; opacity: 0.85; line-height: 1.5; }
+  .about { max-width: 680px; margin: 0 auto; padding: 0 24px 60px; text-align: center; }
+  .about h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; color: #fff59d; }
+  .about p { font-size: 16px; opacity: 0.85; line-height: 1.7; margin-bottom: 12px; }
+  footer { border-top: 1px solid rgba(255,255,255,0.15); text-align: center; padding: 28px 24px; font-size: 14px; opacity: 0.7; }
+  footer a { color: #cffafe; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .divider { width: 60px; height: 3px; background: linear-gradient(90deg, #fff59d, #ffab40); border-radius: 2px; margin: 0 auto 40px; }
+</style>
+</head>
+<body>
+
+<div class="nav"><a href="index.html">&larr; Aloft Games</a></div>
+
+<div class="hero">
+  <span class="bird-emoji">🐦</span>
+  <h1>SloppyBird</h1>
+  <p class="tagline">Tap to flap through the pipes.<br>Dodge flocks and kites, chase the high score.</p>
+  <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.aloftgames.sloppybird" target="_blank">
+    <span class="play-icon">▶</span> Download on Google Play
+  </a>
+  <br>
+  <span class="badge">Free to Play · Android</span>
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <span class="icon">🐤</span>
+    <h3>One-Tap Fun</h3>
+    <p>Simple tap-to-flap controls anyone can pick up in seconds.</p>
+  </div>
+  <div class="feature-card">
+    <span class="icon">⭐</span>
+    <h3>Collect & Upgrade</h3>
+    <p>Grab stars to upgrade your Ghost and Slow-Mo power-ups.</p>
+  </div>
+  <div class="feature-card">
+    <span class="icon">🪁</span>
+    <h3>Tricky Obstacles</h3>
+    <p>Weave past moving pipes, bird flocks and deadly kite strings.</p>
+  </div>
+  <div class="feature-card">
+    <span class="icon">🏆</span>
+    <h3>Leaderboards</h3>
+    <p>Compete globally via Google Play Games and top the high scores.</p>
+  </div>
+</div>
+
+<div class="about">
+  <div class="divider"></div>
+  <h2>About the Studio</h2>
+  <p><strong>Aloft Games</strong> is an indie game studio based in India, making fun, easy-to-play arcade games for Android.</p>
+  <p>Email: <a href="mailto:aloftgames786@gmail.com" style="color:#cffafe;">aloftgames786@gmail.com</a></p>
+</div>
+
+<footer>
+  <a href="sloppybird-privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  &copy; 2026 Aloft Games
+</footer>
+
+</body>
+</html>
